@@ -47,7 +47,6 @@ services:
     container_name: medusa-admin
     environment:
       NODE_ENV: production
-      NODE_OPTIONS: --openssl-legacy-provider
     ports:
       - "7000:80"
 
