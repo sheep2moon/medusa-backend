@@ -15,7 +15,7 @@ services:
       NODE_ENV: production
       JWT_SECRET: fishU78time
       COOKIE_SECRET: fishU78time
-      ADMIN_CORS: https://fishingtime-admin-test.netlify.app
+      ADMIN_CORS: https://admin.fishingtime.pl
       PORT: 9000
     ports:
       - "9000:9000"
