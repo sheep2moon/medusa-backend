@@ -15,7 +15,6 @@ services:
       NODE_ENV: production
       JWT_SECRET: fishU78time
       COOKIE_SECRET: fishU78time
-      ADMIN_CORS: https://admin.fishingtime.pl
       PORT: 9000
     ports:
       - "9000:9000"
@@ -36,6 +35,21 @@ services:
     image: redis
     expose:
       - 6379
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    image: admin:latest
+    restart: always
+    depends_on:
+      - backend
+    container_name: medusa-admin
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: --openssl-legacy-provider
+    ports:
+      - "7000:80"
 
   proxy-manager:
     image: "jc21/nginx-proxy-manager:latest"
