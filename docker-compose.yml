@@ -12,7 +12,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
       REDIS_URL: redis://redis
-      NODE_ENV: development
+      NODE_ENV: production
       JWT_SECRET: fishU78time
       COOKIE_SECRET: fishU78time
       ADMIN_CORS: https://fishingtime-admin-test.netlify.app
